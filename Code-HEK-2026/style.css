@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://fonts.gstatic.com/s/sourcecodepro/v23/HI_SiYsKILxRpg3hIP6sJ7fM7PqlPevW.woff2') format('woff2');
+  font-display: swap;
+}
+
+body {
+    font-family: 'Source Code Pro';
+    font-size: 24px;
+    color: #DE4D99;
+    background-color: #E2E2D8;
+}
+
+.header {
+    border-top: 1px solid black;
+    padding: 10px 0px 10px 5px;
+}
+
+.sketchbox {
+    display: none;
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+.sketch {
+    width: 100%;
+    overflow: hidden;
+    /* height: 900px; */ 
+    /* ^^^ KEEP AS COMMENT FOR NOW */
+}
+
+.unlocked {
+    cursor: pointer;
+}
+
+.locked {
+    cursor: default;
+}
