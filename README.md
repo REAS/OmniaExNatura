@@ -1,0 +1,2 @@
+# OmniaExNatura
+For three months, Casey Reas will inhabit virtual.hek.ch as a remote studio, creating a new sketch for an artwork each week. Every Friday, he will create a small watercolor painting and then translate it into a score for his software agents to move through a synthetic environment. This work is an extension of his Process Series 2004–2010. It pushes his ideas about ecology and emergence into new territory.
