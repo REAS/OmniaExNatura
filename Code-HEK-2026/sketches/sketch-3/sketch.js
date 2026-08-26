@@ -1,7 +1,7 @@
 let angle = 0;
 
 function setup() {
-  createCanvas(1780, 400);
+  createCanvas(windowWidth, windowHeight);
 }
 
 function draw() {

@@ -11,6 +11,7 @@ body {
     font-size: 24px;
     color: #DE4D99;
     background-color: #E2E2D8;
+    margin: 0px;
 }
 
 .header {
@@ -25,10 +26,10 @@ body {
 }
 
 .sketch {
-    width: 100%;
+    width: 1800px;
+    height: 900px; 
     overflow: hidden;
-    /* height: 900px; */ 
-    /* ^^^ KEEP AS COMMENT FOR NOW */
+    border: none;
 }
 
 .unlocked {
