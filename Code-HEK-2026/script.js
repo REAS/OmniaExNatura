@@ -38,6 +38,7 @@ $(document).ready(function () {
       console.log(this.status);
       if (this.status === "locked") {
         this.status = "unlocked-collapsed";
+        this.div.css("color", "#DE4D99");
         this.div.addClass("unlocked");
         this.sketchDiv.removeClass("locked");
         this.sketchDiv.hide();
@@ -126,7 +127,7 @@ $(document).ready(function () {
     "2026-08-20T18:00:00+02:00",
     "2026-08-26T11:00:00-07:00",
     "2026-08-26T12:00:00-07:00",
-    "2026-08-26T13:00:00-07:00",
+    "2026-08-26T14:30:00-07:00",
     "2026-09-25T18:00:00+02:00",
     "2026-10-02T18:00:00+02:00",
     "2026-10-09T18:00:00+02:00",
