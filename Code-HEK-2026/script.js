@@ -20,9 +20,7 @@ $(document).ready(function () {
     }
 
     expand() {
-      console.log(`expanding div ${this.index}`);
       if (this.status === "unlocked-collapsed") {
-        console.log(`actually expanding div ${this.index}`);
         const src = this.isLive()
           ? `https://www.youtube.com/embed/live_stream?channel=${CHANNEL_ID}`
           : this.sketchPath;
@@ -33,14 +31,12 @@ $(document).ready(function () {
     }
 
     unlock() {
-      console.log(this.status);
       if (this.status === "locked") {
         this.status = "unlocked-collapsed";
         this.div.css("color", "#DE4D99");
         this.div.addClass("unlocked");
         this.sketchDiv.removeClass("locked");
         this.sketchDiv.hide();
-        console.log(`unlocking sketch ${this.index}`);
       }
     }
 
@@ -74,7 +70,6 @@ $(document).ready(function () {
     }
 
     handleHeaderClick(index) {
-      console.log(`div ${index} clicked`);
       const sketch = this.sketches[index];
       if (!sketch || sketch.status === "locked" || sketch === this.expanded)
         return;
@@ -91,7 +86,7 @@ $(document).ready(function () {
         if (sketch.status === "locked" && sketch.checkRelease()) {
           sketch.unlock();
         }
-        if (sketch.status != "locked") {
+        if (sketch.status !== "locked") {
           toExpand = index;
         }
       });
