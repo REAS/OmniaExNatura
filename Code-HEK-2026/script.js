@@ -1,8 +1,6 @@
 $(document).ready(function () {
   const LIVESTREAM_DURATION = 1 * 60 * 60 * 1000; // 1 HOURS
-  const TEST_CHANNEL_ID_LIVE = "UCJgRxPSOCWd4W41m6MuCkWw"; // REAL
-  // const TEST_CHANNEL_ID_LIVE = "UCN_u5w69V9wUZYG8WeJWuNg"; // AVATAR
-  const TEST_CHANNEL_ID_NOTLIVE = "UC1rIOwTqDuWkFj87HZYRFOg";
+  const CHANNEL_ID = "UCJgRxPSOCWd4W41m6MuCkWw"; // REAL
 
   class Sketch {
     constructor(index, releaseDateTime) {
@@ -22,11 +20,9 @@ $(document).ready(function () {
     }
 
     expand() {
-      console.log(`expanding div ${this.index}`);
       if (this.status === "unlocked-collapsed") {
-        console.log(`actually expanding div ${this.index}`);
         const src = this.isLive()
-          ? `https://www.youtube.com/embed/live_stream?channel=${TEST_CHANNEL_ID_LIVE}`
+          ? `https://www.youtube.com/embed/live_stream?channel=${CHANNEL_ID}`
           : this.sketchPath;
         this.sketchFrame.attr("src", src);
         this.sketchDiv.show();
@@ -35,22 +31,13 @@ $(document).ready(function () {
     }
 
     unlock() {
-      console.log(this.status);
       if (this.status === "locked") {
         this.status = "unlocked-collapsed";
+        this.div.css("color", "#DE4D99");
         this.div.addClass("unlocked");
         this.sketchDiv.removeClass("locked");
         this.sketchDiv.hide();
-        console.log(`unlocking sketch ${this.index}`);
       }
-
-      const now = new Date();
-      if (now - this.releaseDateTime < LIVESTREAM_DURATION) {
-        this.sketchPath = `https://www.youtube.com/embed/live_stream?channel=${TEST_CHANNEL_ID_LIVE}`;
-        return this.index;
-      }
-
-      return 0;
     }
 
     checkRelease() {
@@ -83,7 +70,6 @@ $(document).ready(function () {
     }
 
     handleHeaderClick(index) {
-      console.log(`div ${index} clicked`);
       const sketch = this.sketches[index];
       if (!sketch || sketch.status === "locked" || sketch === this.expanded)
         return;
@@ -100,7 +86,7 @@ $(document).ready(function () {
         if (sketch.status === "locked" && sketch.checkRelease()) {
           sketch.unlock();
         }
-        if (sketch.status != "locked") {
+        if (sketch.status !== "locked") {
           toExpand = index;
         }
       });
@@ -110,23 +96,11 @@ $(document).ready(function () {
     }
   }
 
-  // const sketchData = [
-  //   "2026-08-28T18:00:00+02:00",
-  //   "2026-09-04T18:00:00+02:00",
-  //   "2026-09-11T18:00:00+02:00",
-  //   "2026-09-18T18:00:00+02:00",
-  //   "2026-09-25T18:00:00+02:00",
-  //   "2026-10-02T18:00:00+02:00",
-  //   "2026-10-09T18:00:00+02:00",
-  //   "2026-10-16T18:00:00+02:00",
-  //   "2026-10-23T18:00:00+02:00",
-  // ];
-
   const sketchData = [
-    "2026-08-20T18:00:00+02:00",
-    "2026-08-26T11:00:00-07:00",
-    "2026-08-26T12:00:00-07:00",
-    "2026-08-26T13:00:00-07:00",
+    "2025-08-28T18:00:00+02:00",
+    "2026-09-04T18:00:00+02:00",
+    "2026-09-11T18:00:00+02:00",
+    "2026-09-18T18:00:00+02:00",
     "2026-09-25T18:00:00+02:00",
     "2026-10-02T18:00:00+02:00",
     "2026-10-09T18:00:00+02:00",

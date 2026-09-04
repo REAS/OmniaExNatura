@@ -2,14 +2,14 @@
   font-family: 'Source Code Pro';
   font-style: normal;
   font-weight: 400;
-  src: url('https://fonts.gstatic.com/s/sourcecodepro/v23/HI_SiYsKILxRpg3hIP6sJ7fM7PqlPevW.woff2') format('woff2');
+  src: url('public/Source_Code_Pro.woff2') format('woff2');
   font-display: swap;
 }
 
 body {
     font-family: 'Source Code Pro';
     font-size: 24px;
-    color: #DE4D99;
+    color: #333333;
     background-color: #E2E2D8;
     margin: 0px;
 }
@@ -34,6 +34,11 @@ body {
 
 .unlocked {
     cursor: pointer;
+}
+
+.unlocked:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .locked {
