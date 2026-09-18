@@ -1,6 +1,7 @@
 $(document).ready(function () {
   const LIVESTREAM_DURATION = 1 * 60 * 60 * 1000; // 1 HOURS
-  const CHANNEL_ID = "UCJgRxPSOCWd4W41m6MuCkWw"; // REAL
+  //const CHANNEL_ID = "UCJgRxPSOCWd4W41m6MuCkWw"; // REAL
+  const CHANNEL_ID = "UDce3hOcvHk"; // REAL
 
   class Sketch {
     constructor(index, releaseDateTime) {
