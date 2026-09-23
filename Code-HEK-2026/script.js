@@ -23,8 +23,7 @@ $(document).ready(function () {
     expand() {
       if (this.status === "unlocked-collapsed") {
         const src = this.isLive()
-          ? `https://www.youtube.com/channel/${CHANNEL_ID}/live`
-          // ? `https://www.youtube.com/embed/live_stream?channel=${CHANNEL_ID}`
+          ? `https://www.youtube.com/embed/live_stream?channel=${CHANNEL_ID}`
           : this.sketchPath;
         this.sketchFrame.attr("src", src);
         this.sketchDiv.show();
@@ -103,8 +102,7 @@ $(document).ready(function () {
     "2026-09-04T18:00:00+02:00",
     "2026-09-11T18:00:00+02:00",
     "2026-09-18T18:00:00+02:00",
-    "2026-09-23T11:20:00+02:00",
-    //"2026-09-25T18:00:00+02:00",
+    "2026-09-25T18:00:00+02:00",
     "2026-10-02T18:00:00+02:00",
     "2026-10-09T18:00:00+02:00",
     "2026-10-16T18:00:00+02:00",
