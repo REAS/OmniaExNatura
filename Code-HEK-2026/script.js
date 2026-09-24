@@ -3,6 +3,14 @@ $(document).ready(function () {
   const CHANNEL_ID = "UCJgRxPSOCWd4W41m6MuCkWw"; // REAL
   //const CHANNEL_ID = "UDce3hOcvHk"; // REAL
 
+  /*
+  https://youtube.com/live/OPDOpKvKEV8?feature=share // #005 09/25
+  https://youtube.com/live/433Qr700wtA?feature=share // #006 10/02
+  https://youtube.com/live/DMDB7H_QkcM?feature=share // #007 10/09
+  https://youtube.com/live/yr0lXwZL4CQ?feature=share // #008 10/16
+  https://youtube.com/live/Obov6eoiuPs?feature=share // #009 10/23
+  */
+  
   class Sketch {
     constructor(index, releaseDateTime) {
       this.index = index;
