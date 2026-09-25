@@ -3,14 +3,15 @@ $(document).ready(function () {
   const CHANNEL_ID = "UCJgRxPSOCWd4W41m6MuCkWw"; // REAL
   //const CHANNEL_ID = "UDce3hOcvHk"; // REAL
 
-  /*
-  https://youtube.com/live/OPDOpKvKEV8?feature=share // #005 09/25
-  https://youtube.com/live/433Qr700wtA?feature=share // #006 10/02
-  https://youtube.com/live/DMDB7H_QkcM?feature=share // #007 10/09
-  https://youtube.com/live/yr0lXwZL4CQ?feature=share // #008 10/16
-  https://youtube.com/live/Obov6eoiuPs?feature=share // #009 10/23
-  */
-  
+  const ytPaths = [
+    "", "", "", "",
+    "https://www.youtube.com/embed/OPDOpKvKEV8", // #005 09/25
+    "https://www.youtube.com/embed/433Qr700wtA", // #006 10/02
+    "https://www.youtube.com/embed/DMDB7H_QkcM", // #007 10/09
+    "https://www.youtube.com/embed/yr0lXwZL4CQ", // #008 10/16
+    "https://www.youtube.com/embed/Obov6eoiuPs" // #009 10/23
+  ];
+
   class Sketch {
     constructor(index, releaseDateTime) {
       this.index = index;
@@ -19,6 +20,7 @@ $(document).ready(function () {
       this.sketchFrame = $(`#sketch-${index}`); // jQuery object
       this.sketchPath = `sketches/sketch-${index}/index.html`;
       this.releaseDateTime = releaseDateTime;
+      this.ytPath = ytPaths[index];
       this.status = "locked"; // Whether or not it can be expanded
     }
 
@@ -31,7 +33,8 @@ $(document).ready(function () {
     expand() {
       if (this.status === "unlocked-collapsed") {
         const src = this.isLive()
-          ? `https://www.youtube.com/embed/live_stream?channel=${CHANNEL_ID}`
+          // ? `https://www.youtube.com/embed/live_stream?channel=${CHANNEL_ID}` // OLD AND NOW DEFUNCT?
+          ? this.ytPath
           : this.sketchPath;
         this.sketchFrame.attr("src", src);
         this.sketchDiv.show();
@@ -110,12 +113,14 @@ $(document).ready(function () {
     "2026-09-04T18:00:00+02:00",
     "2026-09-11T18:00:00+02:00",
     "2026-09-18T18:00:00+02:00",
+    // "2026-09-25T05:00:00+02:00", // for testing
     "2026-09-25T18:00:00+02:00",
     "2026-10-02T18:00:00+02:00",
     "2026-10-09T18:00:00+02:00",
     "2026-10-16T18:00:00+02:00",
     "2026-10-23T18:00:00+02:00",
   ];
+
 
   const sketches = sketchData.map(
     (data, index) => new Sketch(index, new Date(data)),
