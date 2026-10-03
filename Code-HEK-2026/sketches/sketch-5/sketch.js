@@ -14,7 +14,7 @@ let cblack, cwhite, cred, cgreen, cblue, cyellow, cteal;
 
 function preload() {
   img1 = loadImage("data/sketch-06-01-posterized.gif");
-  img2 = loadImage("data/sketch-06-01.png");
+  img2 = loadImage("data/sketch-06-02.png");
 }
 
 function setup() {
@@ -415,7 +415,7 @@ class E3 {
   drawPerimeter(){
     strokeWeight(1);
     //stroke(226, this.alpha*0.5);
-    stroke(this.elementr, this.elementg, this.elementb, this.alpha*0.5);
+    stroke(this.elementr, this.elementg, this.elementb, this.alpha*0.9);
     noFill();
     ellipse(this.x, this.y, this.r*0.2, this.r*0.2);
   }
