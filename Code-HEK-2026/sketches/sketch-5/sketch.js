@@ -14,7 +14,7 @@ let cblack, cwhite, cred, cgreen, cblue, cyellow, cteal;
 
 function preload() {
   img1 = loadImage("data/sketch-06-01-posterized.gif");
-  img2 = loadImage("data/sketch-06-02.png");
+  img2 = loadImage("data/sketch-06-04.png");
 }
 
 function setup() {
@@ -86,7 +86,7 @@ function rebuildSpatialGrid() {
 
 function keyPressed() {
   if (key === ' ') {
-    saveCanvas("HEK-05-01-" + nf(frameCount, 6), "png");
+    saveCanvas("HEK-06-05-" + nf(frameCount, 6), "png");
   }
 }
 
