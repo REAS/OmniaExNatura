@@ -7,7 +7,7 @@ let intersectionSmearDistanceScale = 4.0; // Amplify the crossing point's moveme
 let intersectionSmearMaxDistance = 48; // Maximum drag distance per frame, in canvas pixels.
 let intersectionSmearStrength = 0.99; // Fraction of brush pixels affected at full activity (0 to 1).
 
-let drawColor = false;
+let drawColor = true;
 
 // Choose one rendering style per type. Changes affect future marks, not accumulated history.
 // true = pixel deposits (plus intersection smearing for types 3, 4, and 6).
@@ -45,8 +45,8 @@ let refreshIndex = 0;
 let cblack, cwhite, cred, cgreen, cblue, cyellow, cteal;
 
 function preload() {
-  img1 = loadImage("data/sketch-09-test-card-01-posterized-03.gif");
-  img2 = loadImage("data/sketch-09-test-card-01-posterized-03-grays.gif");
+  img1 = loadImage("data/sketch-09-test-card-02-posterized-02-small.gif");
+  img2 = loadImage("data/sketch-09-color-dull.png");
 }
 
 function setup() {
@@ -186,7 +186,7 @@ function keyPressed() {
   }
 
   if (key === ' ') {
-    saveCanvas("HEK-09-03-" + nf(frameCount, 6), "png");
+    saveCanvas("HEK-09-04-" + nf(frameCount, 6), "png");
   }
 }
 
